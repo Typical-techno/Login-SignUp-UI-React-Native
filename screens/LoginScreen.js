@@ -30,19 +30,8 @@ export default function LoginScreen() {
             <Text className="text-gray-700 ml-4">Email Address</Text>
             <TextInput 
               className="p-4 bg-gray-100 text-gray-700 rounded-2xl mb-3"
-              placeholder="email"
-              value="john@gmail.com" 
+              placeholder="name@gmail.com"
             />
-            <Text className="text-gray-700 ml-4">Password</Text>
-            <TextInput 
-              className="p-4 bg-gray-100 text-gray-700 rounded-2xl"
-              secureTextEntry
-              placeholder="password"
-              value="test12345" 
-            />
-            <TouchableOpacity className="flex items-end">
-              <Text className="text-gray-700 mb-5">Forgot Password?</Text>
-            </TouchableOpacity>
             <TouchableOpacity 
               className="py-3 bg-yellow-400 rounded-xl">
                 <Text 
@@ -51,30 +40,54 @@ export default function LoginScreen() {
                         Login
                 </Text>
              </TouchableOpacity>
-            
-          </View>
-          <Text className="text-xl text-gray-700 font-bold text-center py-5">Or</Text>
-          <View className="flex-row justify-center space-x-12">
-            <TouchableOpacity className="p-2 bg-gray-100 rounded-2xl">
-              <Image source={require('../assets/icons/google.png')} className="w-10 h-10" />
+
+             <Text className='text-center text-2xl' style={{ fontSize: 14 }}>Or Login with</Text>
+                    <View
+                        style={{
+                            flex: 1,
+                            height: 1,
+                            marginHorizontal: 10
+                        }}
+                    />
+                </View>
+
+                <View style={{
+                    flexDirection: 'row',
+                    justifyContent: 'center'
+                }}>
+                    <TouchableOpacity
+                        onPress={() => console.log("Pressed")}
+                        style={{
+                            flex: 1,
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            flexDirection: 'row',
+                            height: 52,
+                            borderWidth: 1,
+                            marginRight: 4,
+                            borderRadius: 10
+                        }}
+                    >
+                        <Image
+                            source={require("../assets/icons/google.png")}
+                            style={{
+                                height: 36,
+                                width: 36,
+                                marginRight: 8
+                            }}
+                            resizeMode='contain'
+                        />
+
+                        <Text>Google</Text>
+                    </TouchableOpacity>
+                </View>
+                <View className="flex-row justify-center mt-7">
+            <Text className="text-gray-500 font-semibold">Don't have an account?</Text>
+            <TouchableOpacity onPress={()=> navigation.navigate('Purpose')}>
+                <Text className="font-semibold text-yellow-500"> Sign Up</Text>
             </TouchableOpacity>
-            <TouchableOpacity className="p-2 bg-gray-100 rounded-2xl">
-              <Image source={require('../assets/icons/apple.png')} className="w-10 h-10" />
-            </TouchableOpacity>
-            <TouchableOpacity className="p-2 bg-gray-100 rounded-2xl">
-              <Image source={require('../assets/icons/facebook.png')} className="w-10 h-10" />
-            </TouchableOpacity>
+        </View>
           </View>
-          <View className="flex-row justify-center mt-7">
-              <Text className="text-gray-500 font-semibold">
-                  Don't have an account?
-              </Text>
-              <TouchableOpacity onPress={()=> navigation.navigate('SignUp')}>
-                  <Text className="font-semibold text-yellow-500"> Sign Up</Text>
-              </TouchableOpacity>
-          </View>
-          
-      </View>
     </View>
     
   )

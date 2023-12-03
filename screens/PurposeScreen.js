@@ -4,40 +4,36 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { themeColors } from '../theme'
 import { useNavigation } from '@react-navigation/native'
 
-export default function WelcomeScreen() {
+export default function PurposeScreen() {
     const navigation = useNavigation();
   return (
     <SafeAreaView className="flex-1" style={{backgroundColor: themeColors.bg}}>
         <View className="flex-1 flex justify-around my-4">
+            <Text 
+                className="text-white font-bold text-4xl text-center">
+                Let's Generate Your Environment
+            </Text>
             <View className="flex-row justify-center">
                 <Image source={require("../assets/images/welcome.png")}
                     style={{width: 450, height: 450}} />
             </View>
-            <Text 
-                className="text-white font-bold text-4xl text-center">
-                Let's Get Started!
-            </Text>
-            <Text
-                className="text-white text-center mx-6">
-                Very easy to use and easy to understand for those of you who are beginners
-            </Text>
             <View className="space-y-4">
                 <TouchableOpacity
-                    onPress={()=> navigation.navigate('Purpose')}
+                    onPress={()=> navigation.navigate('SignUpP')}
                     className="py-3 bg-yellow-400 mx-7 rounded-xl">
                         <Text 
                             className="text-xl font-bold text-center text-gray-700"
                         >
-                            Sign Up
+                            For Personal Use
                         </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress={()=> navigation.navigate('Login')}
+                    onPress={()=> navigation.navigate('SignUpB')}
                     className="py-3 bg-yellow-400 mx-7 rounded-xl">
                         <Text 
                             className="text-xl font-bold text-center text-gray-700"
                         >
-                            Login
+                            For Business
                         </Text>
                 </TouchableOpacity>
             </View>
